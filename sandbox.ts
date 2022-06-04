@@ -1,11 +1,21 @@
-const firstName = "Ramin";
-console.log(firstName);
+// ******************************************************************
+// compile
 
-const inputs = document.querySelectorAll('input');
-console.log(inputs);
+// const firstName = "Ramin";
+// console.log(firstName);
 
-inputs.forEach(x => console.log(x));
+// const inputs = document.querySelectorAll('input');
+// console.log(inputs);
+
+// inputs.forEach(x => console.log(x));
 
 
+// ******************************************************************
+// types
+const circ = function(diameter: number) {
+    return diameter * Math.PI;
+};
+
+console.log(circ(2.5));
 
 
