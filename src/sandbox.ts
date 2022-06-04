@@ -108,30 +108,59 @@
 
 // ******************************************************************
 // functions
-let greet: Function;
-greet = () => {
-    console.log('Hello');
-};
-greet();
+// let greet: Function;
+// greet = () => {
+//     console.log('Hello');
+// };
+// greet();
 
-let sayHello = (firstName: string): void => {
-    console.log('hello', firstName);
-};
-sayHello('Ramin');
+// let sayHello = (firstName: string): void => {
+//     console.log('hello', firstName);
+// };
+// sayHello('Ramin');
 
-let add = (a: number, b: number) => {
-    return a + b;
-};
-let result = add(12, 2);
-console.log(result);
+// let add = (a: number, b: number) => {
+//     return a + b;
+// };
+// let result = add(12, 2);
+// console.log(result);
 
-let sub = (a: number, b: number = 5, c?: number | string): number => {
-    console.log(c);
-    return a-b;
+// let sub = (a: number, b: number = 5, c?: number | string): number => {
+//     console.log(c);
+//     return a-b;
+// };
+// let result2: number;
+// result2 = sub(20, 3, 5);
+// console.log(result2);
+
+
+
+// ******************************************************************
+// type aliases
+type s = string;
+type n = number;
+type b = boolean;
+type sn = string | number;
+type snb = string | number |boolean;
+
+let mixed1: s | n |b;
+let mixed2: snb;
+let array: snb[] = [];
+array.push(20, true, 'Ramin');
+let user: {
+    firstname: s,
+    id: sn,
+    age: n
 };
-let result2: number;
-result2 = sub(20, 3, 5);
-console.log(result2);
+user = {
+    firstname: "Ramin",
+    id: 'ramin3434',
+    age: 20
+}
+let sayHi = (name: s, age: n, phone: sn): s => {
+    return `Hi, I'm ${name} and i have ${age} years old.`
+}
+console.log(sayHi('Ramin', 20, 3445));
 
 
 
