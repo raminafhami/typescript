@@ -7,26 +7,54 @@
 // inputs.forEach(x => console.log(x));
 // ******************************************************************
 // types
-var circ = function (diameter) {
-    return diameter * Math.PI;
-};
-console.log(circ(2.5));
+// const circ = function(diameter: number) {
+//     return diameter * Math.PI;
+// };
+// console.log(circ(2.5));
 // ******************************************************************
 // arrays
-var names = ['Ramin', 'Shahram', 'Milad'];
-names.push('Sina');
-names[2] = 'Gorzin';
-var numbers = [10, 20, 30, 40];
-var mixed = [10, 20, 'Ramin', true];
+// let names = ['Ramin', 'Shahram', 'Milad'];
+// names.push('Sina');
+// names[2] = 'Gorzin';
+// let numbers = [10, 20, 30, 40];
+// let mixed = [10, 20, 'Ramin', true];
 // ******************************************************************
 // objects
-var persopn = {
+// let persopn = {
+//     name: 'Ramin',
+//     age: 25,
+//     isMale: true
+// }
+// persopn = {
+//     name: 'Sina',
+//     age: 15,
+//     isMale: true
+// }
+// ******************************************************************
+// explicit types
+var firstName;
+var age;
+var isMale;
+firstName = "Ramin";
+age = 20;
+isMale = true;
+// array
+var names = [];
+names.push('Hamed');
+console.log(names);
+// union types
+var mixed = [];
+mixed.push(90, 'Ramin');
+console.log(mixed);
+var uid;
+uid = 5;
+uid = 'Ramin';
+// object
+var personOne;
+personOne = { name: 'Ramin', age: 20 };
+var personTwo;
+personTwo = {
     name: 'Ramin',
-    age: 25,
-    isMale: true
-};
-persopn = {
-    name: 'Sina',
-    age: 15,
+    age: 20,
     isMale: true
 };
