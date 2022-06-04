@@ -10,6 +10,7 @@
 // inputs.forEach(x => console.log(x));
 
 
+
 // ******************************************************************
 // types
 const circ = function(diameter: number) {
@@ -18,4 +19,31 @@ const circ = function(diameter: number) {
 
 console.log(circ(2.5));
 
+
+
+// ******************************************************************
+// arrays
+let names = ['Ramin', 'Shahram', 'Milad'];
+names.push('Sina');
+names[2] = 'Gorzin';
+
+let numbers = [10, 20, 30, 40];
+
+let mixed = [10, 20, 'Ramin', true];
+
+
+
+// ******************************************************************
+// objects
+let persopn = {
+    name: 'Ramin',
+    age: 25,
+    isMale: true
+}
+
+persopn = {
+    name: 'Sina',
+    age: 15,
+    isMale: true
+}
 
