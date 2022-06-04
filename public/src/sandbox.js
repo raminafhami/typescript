@@ -1,3 +1,4 @@
+"use strict";
 // ******************************************************************
 // compile
 // const firstName = "Ramin";
@@ -32,29 +33,44 @@
 // }
 // ******************************************************************
 // explicit types
-var firstName;
-var age;
-var isMale;
-firstName = "Ramin";
-age = 20;
-isMale = true;
-// array
-var names = [];
-names.push('Hamed');
-console.log(names);
-// union types
-var mixed = [];
-mixed.push(90, 'Ramin');
-console.log(mixed);
-var uid;
-uid = 5;
-uid = 'Ramin';
-// object
-var personOne;
-personOne = { name: 'Ramin', age: 20 };
-var personTwo;
-personTwo = {
-    name: 'Ramin',
-    age: 20,
-    isMale: true
-};
+// let firstName: string;
+// let age: number;
+// let isMale: boolean;
+// firstName = "Ramin";
+// age = 20;
+// isMale = true;
+// // array
+// let names: string[] = [];
+// names.push('Hamed');
+// console.log(names);
+// // union types
+// let mixed: (number|string)[] = [];
+// mixed.push(90, 'Ramin');
+// console.log(mixed);
+// let uid: number|string;
+// uid = 5;
+// uid = 'Ramin';
+// // object
+// let personOne: object;
+// personOne = {name: 'Ramin', age: 20};
+// let personTwo: {
+//     name: string,
+//     age: number,
+//     isMale: boolean
+// }
+// personTwo = {
+//     name: 'Ramin',
+//     age: 20,
+//     isMale: true
+// }
+// ******************************************************************
+// dynamic types
+// let age: any = 25;
+// age = 50;
+// age = 'Ramin';
+// age = [1, 'Ramin'];
+// console.log(age);
+// let mixed:any[] = [];
+// mixed.push(50);
+// mixed.push('Ramin');
+// console.log(mixed);
