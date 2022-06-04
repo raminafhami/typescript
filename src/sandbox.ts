@@ -106,3 +106,35 @@
 
 
 
+// ******************************************************************
+// functions
+let greet: Function;
+greet = () => {
+    console.log('Hello');
+};
+greet();
+
+let sayHello = (firstName: string): void => {
+    console.log('hello', firstName);
+};
+sayHello('Ramin');
+
+let add = (a: number, b: number) => {
+    return a + b;
+};
+let result = add(12, 2);
+console.log(result);
+
+let sub = (a: number, b: number = 5, c?: number | string): number => {
+    console.log(c);
+    return a-b;
+};
+let result2: number;
+result2 = sub(20, 3, 5);
+console.log(result2);
+
+
+
+
+
+

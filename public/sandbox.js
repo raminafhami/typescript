@@ -74,3 +74,26 @@
 // mixed.push(50);
 // mixed.push('Ramin');
 // console.log(mixed);
+// ******************************************************************
+// functions
+let greet;
+greet = () => {
+    console.log('Hello');
+};
+greet();
+let sayHello = (firstName) => {
+    console.log('hello', firstName);
+};
+sayHello('Ramin');
+let add = (a, b) => {
+    return a + b;
+};
+let result = add(12, 2);
+console.log(result);
+let sub = (a, b = 5, c) => {
+    console.log(c);
+    return a - b;
+};
+let result2;
+result2 = sub(20, 3, 5);
+console.log(result2);
