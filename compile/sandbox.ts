@@ -7,3 +7,5 @@ console.log(inputs);
 inputs.forEach(x => console.log(x));
 
 
+
+
