@@ -193,28 +193,56 @@
 
 // ******************************************************************
 // DOM and type casting
-const ancher = document.querySelector('a')!;
-console.log(ancher.href);
+// const ancher = document.querySelector('a')!;
+// console.log(ancher.href);
 
-const form = document.querySelector('form')!;
-console.log(form.children);
+// const form = document.querySelector('form')!;
+// console.log(form.children);
 
-const form1 = document.querySelector('.new-item-form') as HTMLFormElement;
+// const form1 = document.querySelector('.new-item-form') as HTMLFormElement;
 
-// inputs
-const type = document.getElementById('type') as HTMLSelectElement;
-const tofrom = document.getElementById('tofrom') as HTMLInputElement;
-const details = document.getElementById('details') as HTMLInputElement;
-const amount = document.getElementById('amount') as HTMLInputElement;
+// // inputs
+// const type = document.getElementById('type') as HTMLSelectElement;
+// const tofrom = document.getElementById('tofrom') as HTMLInputElement;
+// const details = document.getElementById('details') as HTMLInputElement;
+// const amount = document.getElementById('amount') as HTMLInputElement;
 
-form.addEventListener('submit', (e: Event) => {
-    e.preventDefault();
-    console.log(type.value);
-    console.log(tofrom.value);
-    console.log(details.value);
-    console.log(amount.valueAsNumber);
-})
-
-
+// form.addEventListener('submit', (e: Event) => {
+//     e.preventDefault();
+//     console.log(type.value);
+//     console.log(tofrom.value);
+//     console.log(details.value);
+//     console.log(amount.valueAsNumber);
+// })
 
 
+
+// ******************************************************************
+// class
+class Invoice {
+    client: string;
+    details: string;
+    amount: number;
+
+    constructor(c: string, d: string, a: number) {
+        this.client = c;
+        this.details = d;
+        this.amount = a;
+    }
+
+    format() {
+        return `${this.client} owes ${this.amount} for ${this.details}`
+    }
+};
+
+const invOne = new Invoice('Ramin', 'web', 20);
+const invTwo = new Invoice('Reza', 'web', 40);
+
+console.log(invOne);
+console.log(invTwo);
+console.log(invOne.format());
+console.log(invTwo.format());
+
+let invoices: Invoice[] = [];
+invoices.push(invOne, invTwo)
+console.log(invoices);
