@@ -127,7 +127,7 @@
 
 // let sub = (a: number, b: number = 5, c?: number | string): number => {
 //     console.log(c);
-//     return a-b;
+//     return a - b;
 // };
 // let result2: number;
 // result2 = sub(20, 3, 5);
@@ -137,33 +137,55 @@
 
 // ******************************************************************
 // type aliases
-type s = string;
-type n = number;
-type b = boolean;
-type sn = string | number;
-type snb = string | number |boolean;
+// type s = string;
+// type n = number;
+// type b = boolean;
+// type sn = string | number;
+// type snb = string | number |boolean;
 
-let mixed1: s | n |b;
-let mixed2: snb;
-let array: snb[] = [];
-array.push(20, true, 'Ramin');
-let user: {
-    firstname: s,
-    id: sn,
-    age: n
+// let mixed1: s | n |b;
+// let mixed2: snb;
+// let array: snb[] = [];
+// array.push(20, true, 'Ramin');
+// let user: {
+//     firstname: s,
+//     id: sn,
+//     age: n
+// };
+// user = {
+//     firstname: "Ramin",
+//     id: 'ramin3434',
+//     age: 20
+// }
+// let sayHi = (name: s, age: n, phone: sn): s => {
+//     return `Hi, I'm ${name} and i have ${age} years old.`
+// }
+// console.log(sayHi('Ramin', 20, 3445));
+
+
+
+// ******************************************************************
+// function signitures
+let greet: (a: string, b: string) => void;
+greet = (name: string , msg: string) => {
+    console.log(`${name} says ${msg}`);
 };
-user = {
-    firstname: "Ramin",
-    id: 'ramin3434',
-    age: 20
-}
-let sayHi = (name: s, age: n, phone: sn): s => {
-    return `Hi, I'm ${name} and i have ${age} years old.`
-}
-console.log(sayHi('Ramin', 20, 3445));
+greet('Ramin', 'Hello');
 
+let calc: (a: number, b: number, c: string) => number;
+calc = (num1: number, num2: number, action: string) => {
+    if (action === 'add') {
+        return num1 + num2;
+    } else {
+        return num1 - num2
+    }
+};
 
-
-
+type objType = {name: string, age: number};
+let person: (obj: objType) => void;
+person = (user: objType) => {
+    console.log(`my name is ${user.name} and i have ${user.age} years old` );
+};
+person({name: 'Ramin', age: 20});
 
 
