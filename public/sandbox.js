@@ -124,22 +124,41 @@
 // console.log(sayHi('Ramin', 20, 3445));
 // ******************************************************************
 // function signitures
-let greet;
-greet = (name, msg) => {
-    console.log(`${name} says ${msg}`);
-};
-greet('Ramin', 'Hello');
-let calc;
-calc = (num1, num2, action) => {
-    if (action === 'add') {
-        return num1 + num2;
-    }
-    else {
-        return num1 - num2;
-    }
-};
-let person;
-person = (user) => {
-    console.log(`my name is ${user.name} and i have ${user.age} years old`);
-};
-person({ name: 'Ramin', age: 20 });
+// let greet: (a: string, b: string) => void;
+// greet = (name: string , msg: string) => {
+//     console.log(`${name} says ${msg}`);
+// };
+// greet('Ramin', 'Hello');
+// let calc: (a: number, b: number, c: string) => number;
+// calc = (num1: number, num2: number, action: string) => {
+//     if (action === 'add') {
+//         return num1 + num2;
+//     } else {
+//         return num1 - num2
+//     }
+// };
+// type objType = {name: string, age: number};
+// let person: (obj: objType) => void;
+// person = (user: objType) => {
+//     console.log(`my name is ${user.name} and i have ${user.age} years old` );
+// };
+// person({name: 'Ramin', age: 20});
+// ******************************************************************
+// DOM and type casting
+const ancher = document.querySelector('a');
+console.log(ancher.href);
+const form = document.querySelector('form');
+console.log(form.children);
+const form1 = document.querySelector('.new-item-form');
+// inputs
+const type = document.getElementById('type');
+const tofrom = document.getElementById('tofrom');
+const details = document.getElementById('details');
+const amount = document.getElementById('amount');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log(type.value);
+    console.log(tofrom.value);
+    console.log(details.value);
+    console.log(amount.valueAsNumber);
+});

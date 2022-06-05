@@ -166,26 +166,55 @@
 
 // ******************************************************************
 // function signitures
-let greet: (a: string, b: string) => void;
-greet = (name: string , msg: string) => {
-    console.log(`${name} says ${msg}`);
-};
-greet('Ramin', 'Hello');
+// let greet: (a: string, b: string) => void;
+// greet = (name: string , msg: string) => {
+//     console.log(`${name} says ${msg}`);
+// };
+// greet('Ramin', 'Hello');
 
-let calc: (a: number, b: number, c: string) => number;
-calc = (num1: number, num2: number, action: string) => {
-    if (action === 'add') {
-        return num1 + num2;
-    } else {
-        return num1 - num2
-    }
-};
+// let calc: (a: number, b: number, c: string) => number;
+// calc = (num1: number, num2: number, action: string) => {
+//     if (action === 'add') {
+//         return num1 + num2;
+//     } else {
+//         return num1 - num2
+//     }
+// };
 
-type objType = {name: string, age: number};
-let person: (obj: objType) => void;
-person = (user: objType) => {
-    console.log(`my name is ${user.name} and i have ${user.age} years old` );
-};
-person({name: 'Ramin', age: 20});
+// type objType = {name: string, age: number};
+// let person: (obj: objType) => void;
+// person = (user: objType) => {
+//     console.log(`my name is ${user.name} and i have ${user.age} years old` );
+// };
+// person({name: 'Ramin', age: 20});
+
+
+
+
+// ******************************************************************
+// DOM and type casting
+const ancher = document.querySelector('a')!;
+console.log(ancher.href);
+
+const form = document.querySelector('form')!;
+console.log(form.children);
+
+const form1 = document.querySelector('.new-item-form') as HTMLFormElement;
+
+// inputs
+const type = document.getElementById('type') as HTMLSelectElement;
+const tofrom = document.getElementById('tofrom') as HTMLInputElement;
+const details = document.getElementById('details') as HTMLInputElement;
+const amount = document.getElementById('amount') as HTMLInputElement;
+
+form.addEventListener('submit', (e: Event) => {
+    e.preventDefault();
+    console.log(type.value);
+    console.log(tofrom.value);
+    console.log(details.value);
+    console.log(amount.valueAsNumber);
+})
+
+
 
 
