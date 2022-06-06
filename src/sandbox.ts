@@ -235,16 +235,42 @@
 //     }
 // };
 
-class Invoice {
-    constructor(
-        public client: string,
-        private details: string,
-        readonly amount: number
-    ) {};
-    format() {
-        return `${this.client} owes ${this.amount} for ${this.details}`
-    }
-};
+// class Invoice {
+//     constructor(
+//         public client: string,
+//         private details: string,
+//         readonly amount: number
+//     ) {};
+//     format() {
+//         return `${this.client} owes ${this.amount} for ${this.details}`
+//     }
+// };
+
+// const invOne = new Invoice('Ramin', 'web', 20);
+// const invTwo = new Invoice('Reza', 'web', 40);
+
+// console.log(invOne);
+// console.log(invTwo);
+// console.log(invOne.format());
+// console.log(invTwo.format());
+
+// let invoices: Invoice[] = [];
+// invoices.push(invOne, invTwo)
+// console.log(invoices);
+
+// for (const inv of invoices) {
+//     console.log(inv.client);
+//     // console.log(inv.details);
+//     console.log(inv.amount);
+//     console.log(inv.format());
+    
+// }
+
+
+
+// ******************************************************************
+// modules
+import { Invoice } from './classess/Invoice.js';
 
 const invOne = new Invoice('Ramin', 'web', 20);
 const invTwo = new Invoice('Reza', 'web', 40);
@@ -265,6 +291,3 @@ for (const inv of invoices) {
     console.log(inv.format());
     
 }
-
-
-
