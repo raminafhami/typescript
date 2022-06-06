@@ -270,24 +270,48 @@
 
 // ******************************************************************
 // modules
-import { Invoice } from './classess/Invoice.js';
+// import { Invoice } from './classess/Invoice.js';
 
-const invOne = new Invoice('Ramin', 'web', 20);
-const invTwo = new Invoice('Reza', 'web', 40);
+// const invOne = new Invoice('Ramin', 'web', 20);
+// const invTwo = new Invoice('Reza', 'web', 40);
 
-console.log(invOne);
-console.log(invTwo);
-console.log(invOne.format());
-console.log(invTwo.format());
+// console.log(invOne);
+// console.log(invTwo);
+// console.log(invOne.format());
+// console.log(invTwo.format());
 
-let invoices: Invoice[] = [];
-invoices.push(invOne, invTwo)
-console.log(invoices);
+// let invoices: Invoice[] = [];
+// invoices.push(invOne, invTwo)
+// console.log(invoices);
 
-for (const inv of invoices) {
-    console.log(inv.client);
-    // console.log(inv.details);
-    console.log(inv.amount);
-    console.log(inv.format());
+// for (const inv of invoices) {
+//     console.log(inv.client);
+//     // console.log(inv.details);
+//     console.log(inv.amount);
+//     console.log(inv.format());
     
-}
+// }
+
+
+
+// ******************************************************************
+// interfaces
+interface person {
+    name: string,
+    age: number,
+    speak(a: string): void
+};
+
+const person1: person = {
+    name: "Ramin",
+    age: 20,
+    speak(text: string): void {
+        console.log(text);
+    }
+};
+
+const greetPerson = (user: person) => {
+    console.log("hello " + user.name);
+};
+
+greetPerson(person1)
