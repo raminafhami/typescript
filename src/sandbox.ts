@@ -218,18 +218,29 @@
 
 
 // ******************************************************************
-// class
+// class and access modifier
+// class Invoice {
+//     public client: string;
+//     private details: string;
+//     readonly amount: number;
+
+//     constructor(c: string, d: string, a: number) {
+//         this.client = c;
+//         this.details = d;
+//         this.amount = a;
+//     }
+
+//     format() {
+//         return `${this.client} owes ${this.amount} for ${this.details}`
+//     }
+// };
+
 class Invoice {
-    client: string;
-    details: string;
-    amount: number;
-
-    constructor(c: string, d: string, a: number) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
-    }
-
+    constructor(
+        public client: string,
+        private details: string,
+        readonly amount: number
+    ) {};
     format() {
         return `${this.client} owes ${this.amount} for ${this.details}`
     }
@@ -246,3 +257,14 @@ console.log(invTwo.format());
 let invoices: Invoice[] = [];
 invoices.push(invOne, invTwo)
 console.log(invoices);
+
+for (const inv of invoices) {
+    console.log(inv.client);
+    // console.log(inv.details);
+    console.log(inv.amount);
+    console.log(inv.format());
+    
+}
+
+
+
