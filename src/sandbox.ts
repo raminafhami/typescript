@@ -395,3 +395,10 @@ let doc3: Resource <string> = {
     data: 'Roaman'
 } ;
 console.log(doc3);
+
+
+
+// // ******************************************************************
+// // tuples
+let tup: [string, number, boolean] = ['Ramin', 12, true];
+console.log(tup);

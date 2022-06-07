@@ -49,3 +49,7 @@ let doc3 = {
     data: 'Roaman'
 };
 console.log(doc3);
+// // ******************************************************************
+// // tuples
+let tup = ['Ramin', 12, true];
+console.log(tup);
