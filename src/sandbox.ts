@@ -296,22 +296,76 @@
 
 // ******************************************************************
 // interfaces
-interface person {
-    name: string,
-    age: number,
-    speak(a: string): void
-};
+// interface person {
+//     name: string,
+//     age: number,
+//     speak(a: string): void
+// };
 
-const person1: person = {
-    name: "Ramin",
-    age: 20,
-    speak(text: string): void {
-        console.log(text);
-    }
-};
+// const person1: person = {
+//     name: "Ramin",
+//     age: 20,
+//     speak(text: string): void {
+//         console.log(text);
+//     }
+// };
 
-const greetPerson = (user: person) => {
-    console.log("hello " + user.name);
-};
+// const greetPerson = (user: person) => {
+//     console.log("hello " + user.name);
+// };
 
-greetPerson(person1)
+// greetPerson(person1);
+
+
+
+// // ******************************************************************
+// // interface with class
+// import { Invoice } from './classess/Invoice.js';
+// import { Payment } from './classess/Payment.js';
+// import { HasFormatter } from './interfaces/HasFormatter.js';
+
+// let docOne: HasFormatter;
+// let docTwo: HasFormatter;
+
+// docOne = new Invoice('Ramin', 'web', 20);
+// docTwo = new Payment('Reza', 'web', 40);
+
+// let docs: HasFormatter[] = [];
+// docs.push(docOne, docTwo);
+// console.log(docs);
+
+
+
+// // ******************************************************************
+// finall app
+import { HasFormatter } from "./interfaces/HasFormatter.js";
+import { Invoice } from "./classess/Invoice.js";
+import { Payment } from "./classess/Payment.js";
+import { ListTemplate } from "./classess/ListTemplate.js";
+
+const type = document.getElementById('type') as HTMLSelectElement;
+const tofrom = document.getElementById('tofrom') as HTMLInputElement;
+const details = document.getElementById('details') as HTMLInputElement;
+const amount = document.getElementById('amount') as HTMLInputElement;
+
+const ul = document.querySelector('ul')!;
+const list = new ListTemplate(ul)
+
+const form = document.querySelector('form')!;
+form.addEventListener('submit', (e: Event) => {
+    e.preventDefault();
+
+    let doc: HasFormatter;
+    if (type.value === 'صورتحساب') {
+        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+    } else {
+        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+    };
+    list.render(doc, type.value, 'end');
+})
+
+
+
+
+// // ******************************************************************
+// // interface with class

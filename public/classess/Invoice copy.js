@@ -4,7 +4,10 @@ export class Invoice {
         this.details = details;
         this.amount = amount;
     }
+    ;
     format() {
-        return `${this.client} - ${this.amount} تومان بدهکار برای ${this.details} `;
+        return `${this.client} owes ${this.amount} for ${this.details}`;
     }
+    ;
 }
+;
