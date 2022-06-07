@@ -23,4 +23,16 @@ form.addEventListener('submit', (e) => {
     list.render(doc, type.value, 'end');
 });
 // // ******************************************************************
-// // interface with class
+// // generic
+const addUid = (obj) => {
+    return Object.assign(Object.assign({}, obj), { uid: Math.floor(Math.random() * 100) });
+};
+let doc1 = addUid({ a: 1 });
+console.log(doc1.a);
+;
+let doc2 = {
+    uid: 1,
+    resoursceName: 'Ramin',
+    data: { name: 'Ramin' }
+};
+console.log(doc2);

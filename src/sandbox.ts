@@ -368,4 +368,22 @@ form.addEventListener('submit', (e: Event) => {
 
 
 // // ******************************************************************
-// // interface with class
+// // generic
+const addUid = <T extends object>(obj: T) => {
+    return {...obj, uid: Math.floor(Math.random() * 100)};
+};
+let doc1 = addUid({a: 1});
+console.log(doc1.a);
+
+
+interface Resource <T> {
+    uid: number,
+    resoursceName: string,
+    data: T
+};
+let doc2: Resource <object> = {
+    uid: 1,
+    resoursceName: 'Ramin',
+    data: {name: 'Ramin'}
+} ;
+console.log(doc2);
