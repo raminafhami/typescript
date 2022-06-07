@@ -23,16 +23,29 @@ form.addEventListener('submit', (e) => {
     list.render(doc, type.value, 'end');
 });
 // // ******************************************************************
-// // generic
+// // generic and enums
 const addUid = (obj) => {
     return Object.assign(Object.assign({}, obj), { uid: Math.floor(Math.random() * 100) });
 };
 let doc1 = addUid({ a: 1 });
 console.log(doc1.a);
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["AUTH"] = 0] = "AUTH";
+    ResourceType[ResourceType["PERSON"] = 1] = "PERSON";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["BOOK"] = 3] = "BOOK";
+})(ResourceType || (ResourceType = {}));
 ;
 let doc2 = {
     uid: 1,
-    resoursceName: 'Ramin',
-    data: { name: 'Ramin' }
+    resoursceName: ResourceType.PERSON,
+    data: 'Ramin'
 };
 console.log(doc2);
+let doc3 = {
+    uid: 2,
+    resoursceName: ResourceType.BOOK,
+    data: 'Roaman'
+};
+console.log(doc3);

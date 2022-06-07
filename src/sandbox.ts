@@ -368,7 +368,7 @@ form.addEventListener('submit', (e: Event) => {
 
 
 // // ******************************************************************
-// // generic
+// // generic and enums
 const addUid = <T extends object>(obj: T) => {
     return {...obj, uid: Math.floor(Math.random() * 100)};
 };
@@ -376,14 +376,22 @@ let doc1 = addUid({a: 1});
 console.log(doc1.a);
 
 
+enum ResourceType{AUTH, PERSON, FILM, BOOK}
+
 interface Resource <T> {
     uid: number,
-    resoursceName: string,
+    resoursceName: number,
     data: T
 };
-let doc2: Resource <object> = {
+let doc2: Resource <string> = {
     uid: 1,
-    resoursceName: 'Ramin',
-    data: {name: 'Ramin'}
+    resoursceName: ResourceType.PERSON,
+    data: 'Ramin'
 } ;
 console.log(doc2);
+let doc3: Resource <string> = {
+    uid: 2,
+    resoursceName: ResourceType.BOOK,
+    data: 'Roaman'
+} ;
+console.log(doc3);
