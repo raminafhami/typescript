@@ -1,5 +1,14 @@
 // ******************************************************************
 // compile
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 import { Invoice } from "./classess/Invoice.js";
 import { Payment } from "./classess/Payment.js";
 import { ListTemplate } from "./classess/ListTemplate.js";
@@ -24,32 +33,57 @@ form.addEventListener('submit', (e) => {
 });
 // // ******************************************************************
 // // generic and enums
-const addUid = (obj) => {
-    return Object.assign(Object.assign({}, obj), { uid: Math.floor(Math.random() * 100) });
-};
-let doc1 = addUid({ a: 1 });
-console.log(doc1.a);
-var ResourceType;
-(function (ResourceType) {
-    ResourceType[ResourceType["AUTH"] = 0] = "AUTH";
-    ResourceType[ResourceType["PERSON"] = 1] = "PERSON";
-    ResourceType[ResourceType["FILM"] = 2] = "FILM";
-    ResourceType[ResourceType["BOOK"] = 3] = "BOOK";
-})(ResourceType || (ResourceType = {}));
-;
-let doc2 = {
-    uid: 1,
-    resoursceName: ResourceType.PERSON,
-    data: 'Ramin'
-};
-console.log(doc2);
-let doc3 = {
-    uid: 2,
-    resoursceName: ResourceType.BOOK,
-    data: 'Roaman'
-};
-console.log(doc3);
+// const addUid = <T extends object>(obj: T) => {
+//     return {...obj, uid: Math.floor(Math.random() * 100)};
+// };
+// let doc1 = addUid({a: 1});
+// console.log(doc1.a);
+// enum ResourceType{AUTH, PERSON, FILM, BOOK}
+// interface Resource <T> {
+//     uid: number,
+//     resoursceName: number,
+//     data: T
+// };
+// let doc2: Resource <string> = {
+//     uid: 1,
+//     resoursceName: ResourceType.PERSON,
+//     data: 'Ramin'
+// } ;
+// console.log(doc2);
+// let doc3: Resource <string> = {
+//     uid: 2,
+//     resoursceName: ResourceType.BOOK,
+//     data: 'Roaman'
+// } ;
+// console.log(doc3);
 // // ******************************************************************
 // // tuples
-let tup = ['Ramin', 12, true];
-console.log(tup);
+// let tup: [string, number, boolean] = ['Ramin', 12, true];
+// console.log(tup);
+// ******************************************************************
+// decorators
+function deco(target) {
+    console.log(1);
+    target.prototype.id = 100;
+}
+;
+function OtherDecorator(name) {
+    console.log(2);
+    return (target) => {
+        console.log(3);
+        target.prototype.name = name;
+    };
+}
+let ClassDecoratorExample = class ClassDecoratorExample {
+    constructor(age) {
+        this.age = age;
+        console.log(4);
+    }
+};
+ClassDecoratorExample = __decorate([
+    deco,
+    OtherDecorator('Ramin'),
+    __metadata("design:paramtypes", [Number])
+], ClassDecoratorExample);
+// const x = new ClassDecoratorExample(20);
+// console.log(x);

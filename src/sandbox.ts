@@ -369,36 +369,72 @@ form.addEventListener('submit', (e: Event) => {
 
 // // ******************************************************************
 // // generic and enums
-const addUid = <T extends object>(obj: T) => {
-    return {...obj, uid: Math.floor(Math.random() * 100)};
-};
-let doc1 = addUid({a: 1});
-console.log(doc1.a);
+// const addUid = <T extends object>(obj: T) => {
+//     return {...obj, uid: Math.floor(Math.random() * 100)};
+// };
+// let doc1 = addUid({a: 1});
+// console.log(doc1.a);
 
 
-enum ResourceType{AUTH, PERSON, FILM, BOOK}
+// enum ResourceType{AUTH, PERSON, FILM, BOOK}
 
-interface Resource <T> {
-    uid: number,
-    resoursceName: number,
-    data: T
-};
-let doc2: Resource <string> = {
-    uid: 1,
-    resoursceName: ResourceType.PERSON,
-    data: 'Ramin'
-} ;
-console.log(doc2);
-let doc3: Resource <string> = {
-    uid: 2,
-    resoursceName: ResourceType.BOOK,
-    data: 'Roaman'
-} ;
-console.log(doc3);
+// interface Resource <T> {
+//     uid: number,
+//     resoursceName: number,
+//     data: T
+// };
+// let doc2: Resource <string> = {
+//     uid: 1,
+//     resoursceName: ResourceType.PERSON,
+//     data: 'Ramin'
+// } ;
+// console.log(doc2);
+// let doc3: Resource <string> = {
+//     uid: 2,
+//     resoursceName: ResourceType.BOOK,
+//     data: 'Roaman'
+// } ;
+// console.log(doc3);
 
 
 
 // // ******************************************************************
 // // tuples
-let tup: [string, number, boolean] = ['Ramin', 12, true];
-console.log(tup);
+// let tup: [string, number, boolean] = ['Ramin', 12, true];
+// console.log(tup);
+
+
+
+// ******************************************************************
+// decorators
+function deco(target: Function) {
+    console.log(1);
+    target.prototype.id = 100;
+};
+
+function OtherDecorator(name: string) {
+    console.log(2);
+    
+    return (target: Function) => {
+        console.log(3);
+        
+        target.prototype.name = name;
+    }
+}
+
+@deco
+@OtherDecorator('Ramin')
+class ClassDecoratorExample {
+    age: number;
+    constructor(age: number) {
+        this.age = age;
+        console.log(4);
+        
+    }
+ }
+
+
+// const x = new ClassDecoratorExample(20);
+// console.log(x);
+
+
